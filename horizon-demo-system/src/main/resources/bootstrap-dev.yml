@@ -1,0 +1,32 @@
+spring:
+  # redis配置
+  redis:
+    host: localhost
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        min-idle: 4
+        max-idle: 8
+        max-wait: 100
+
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/inspur_boat?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+      # 配置Druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+
+# jwt
+jwt:
+  private:
+    key: classpath:jwt.key
+  public:
+    key: classpath:jwt.pub
