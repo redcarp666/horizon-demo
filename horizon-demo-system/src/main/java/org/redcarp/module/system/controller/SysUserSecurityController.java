@@ -11,6 +11,7 @@ import org.redcarp.module.system.service.impl.SysUserSecurityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -44,7 +45,7 @@ public class SysUserSecurityController {
 	}
 
 	@PostMapping("/changePassword")
-	public Response<Object> changePassword(@RequestBody ChangePasswordInput input) {
+	public Response<Object> changePassword(@RequestBody @Validated ChangePasswordInput input) {
 		sysUserSecurityManager.changePassword(input.getOldPassword(), input.getNewPassword());
 		return Response.ok();
 	}

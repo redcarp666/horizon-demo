@@ -30,7 +30,6 @@ public class SysUserController {
 
 	@ApiOperation("通过id查询数据")
 	@PostMapping("/getById")
-	@PreAuthorize("hasRole('test')")
 	public Response<SysUser> getById(@RequestBody Request<String> request) {
 		return Response.ok(sysUserService.getById(request.getData()));
 	}
