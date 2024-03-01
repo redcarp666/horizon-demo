@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.redcarp.common.base.domain.Request;
+import org.redcarp.horizon.common.base.domain.Request;
 import org.redcarp.horizon.demo.system.entity.SysPost;
 import org.redcarp.horizon.demo.system.mapper.SysPostMapper;
 import org.redcarp.horizon.demo.system.service.ISysPostService;

@@ -2,7 +2,7 @@ package org.redcarp.horizon.demo.system.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.redcarp.common.base.domain.Request;
+import org.redcarp.horizon.common.base.domain.Request;
 import org.redcarp.horizon.demo.system.entity.SysRole;
 import org.redcarp.horizon.demo.system.dto.GetPermissionRequest;
 import org.redcarp.horizon.demo.system.dto.PermissionMenuRequest;

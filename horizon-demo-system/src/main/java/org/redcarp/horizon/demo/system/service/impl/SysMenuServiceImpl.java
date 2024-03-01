@@ -5,7 +5,7 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.common.collect.Lists;
-import org.redcarp.common.base.constant.RedisConstants;
+import org.redcarp.horizon.common.base.constant.RedisConstants;
 import org.redcarp.horizon.component.redis.RedisService;
 import org.redcarp.horizon.core.datastructure.Tree;
 import org.redcarp.horizon.demo.system.entity.SysMenu;

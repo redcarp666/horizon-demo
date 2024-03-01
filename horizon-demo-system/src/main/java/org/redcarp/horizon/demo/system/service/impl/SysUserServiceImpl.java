@@ -2,8 +2,8 @@ package org.redcarp.horizon.demo.system.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.redcarp.common.base.domain.Request;
-import org.redcarp.common.base.utils.PreconditionUtils;
+import org.redcarp.horizon.common.base.domain.Request;
+import org.redcarp.horizon.common.base.utils.PreconditionUtils;
 import org.redcarp.horizon.component.redis.RedisService;
 import org.redcarp.horizon.demo.system.dto.RegisterUserInput;
 import org.redcarp.horizon.demo.system.entity.SysUser;

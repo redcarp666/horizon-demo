@@ -1,7 +1,7 @@
 package org.redcarp.horizon.demo.system.service.impl;
 
 
-import org.redcarp.common.base.utils.PreconditionUtils;
+import org.redcarp.horizon.common.base.utils.PreconditionUtils;
 import org.redcarp.horizon.security.jwt.AbstractSecurityManager;
 import org.redcarp.horizon.security.jwt.handler.BlacklistHandler;
 import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
