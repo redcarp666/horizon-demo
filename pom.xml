@@ -6,19 +6,19 @@
     <name>horizon-demo</name>
     <groupId>org.redcarp</groupId>
     <artifactId>horizon-demo</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
         <module>horizon-demo-system</module>
     </modules>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
         <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.boot.version>2.7.13</spring.boot.version>
-        <horizon.version>1.0.0-SNAPSHOT</horizon.version>
+        <spring.boot.version>2.7.18</spring.boot.version>
+        <horizon.version>1.1.0-SNAPSHOT</horizon.version>
     </properties>
 
 
