@@ -12,7 +12,7 @@ spring:
 
   # 数据源配置
   datasource:
-    url: jdbc:mysql://localhost:3306/inspur_boat?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    url: jdbc:mysql://localhost:3306/horizon_system?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
