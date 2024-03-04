@@ -24,6 +24,10 @@ spring:
       max-active: 20
       max-wait: 60000
 
+
+
+  flyway:
+    baseline-on-migrate: true
 # jwt
 jwt:
   private:
