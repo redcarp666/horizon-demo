@@ -7,10 +7,48 @@
               value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - [%method,%line] - %msg%n"/>
 
     <!-- 控制台输出 -->
-    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="info_console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>${log.pattern}</pattern>
         </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!-- 过滤的级别 -->
+            <level>INFO</level>
+            <!-- 匹配时的操作：接收（记录） -->
+            <onMatch>ACCEPT</onMatch>
+            <!-- 不匹配时的操作：拒绝（不记录） -->
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- 控制台输出 -->
+    <appender name="warn_console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!-- 过滤的级别 -->
+            <level>WARN</level>
+            <!-- 匹配时的操作：接收（记录） -->
+            <onMatch>ACCEPT</onMatch>
+            <!-- 不匹配时的操作：拒绝（不记录） -->
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- 控制台输出 -->
+    <appender name="error_console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!-- 过滤的级别 -->
+            <level>ERROR</level>
+            <!-- 匹配时的操作：接收（记录） -->
+            <onMatch>ACCEPT</onMatch>
+            <!-- 不匹配时的操作：拒绝（不记录） -->
+            <onMismatch>DENY</onMismatch>
+        </filter>
     </appender>
 
     <!-- 系统日志输出 -->
@@ -20,7 +58,7 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志文件名格式 -->
             <fileNamePattern>${log.path}/trace.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <maxHistory>2</maxHistory>
+            <maxHistory>1</maxHistory>
         </rollingPolicy>
         <encoder>
             <pattern>${log.pattern}</pattern>
@@ -59,16 +97,19 @@
     <root level="trace">
         <appender-ref ref="file_trace"/>
         <appender-ref ref="file_error"/>
+        <appender-ref ref="info_console"/>
+        <appender-ref ref="warn_console"/>
+        <appender-ref ref="error_console"/>
     </root>
 
-    <!-- 系统模块日志级别控制  -->
-    <logger name="org.redcarp" level="info">
-        <appender-ref ref="console"/>
-    </logger>
-    <!-- Spring日志级别控制  -->
-    <logger name="org.springframework" level="info">
-        <appender-ref ref="console"/>
-    </logger>
+<!--    &lt;!&ndash; 系统模块日志级别控制  &ndash;&gt;-->
+<!--    <logger name="org.redcarp" level="info">-->
+<!--        <appender-ref ref="console"/>-->
+<!--    </logger>-->
+<!--    &lt;!&ndash; Spring日志级别控制  &ndash;&gt;-->
+<!--    <logger name="org.springframework" level="info">-->
+<!--        <appender-ref ref="console"/>-->
+<!--    </logger>-->
 
 
 </configuration>
