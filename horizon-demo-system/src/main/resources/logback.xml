@@ -6,21 +6,6 @@
     <property name="log.pattern"
               value="mdc:%X{mdc} %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{20} - [%method,%line] - %msg%n"/>
 
-    <!--系统操作日志-->
-    <root level="trace">
-        <appender-ref ref="file_trace"/>
-        <appender-ref ref="file_error"/>
-    </root>
-
-    <!-- 系统模块日志级别控制  -->
-    <logger name="org.redcarp" level="debug">
-        <appender-ref ref="console"/>
-    </logger>
-    <!-- Spring日志级别控制  -->
-    <logger name="org.springframework" level="debug">
-        <appender-ref ref="console"/>
-    </logger>
-
     <!-- 控制台输出 -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -69,4 +54,21 @@
             <onMismatch>DENY</onMismatch>
         </filter>
     </appender>
+
+    <!--系统操作日志-->
+    <root level="trace">
+        <appender-ref ref="file_trace"/>
+        <appender-ref ref="file_error"/>
+    </root>
+
+    <!-- 系统模块日志级别控制  -->
+    <logger name="org.redcarp" level="info">
+        <appender-ref ref="console"/>
+    </logger>
+    <!-- Spring日志级别控制  -->
+    <logger name="org.springframework" level="info">
+        <appender-ref ref="console"/>
+    </logger>
+
+
 </configuration>
