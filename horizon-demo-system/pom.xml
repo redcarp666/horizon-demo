@@ -11,11 +11,10 @@
     <artifactId>horizon-demo-system</artifactId>
 
 
-
     <dependencies>
         <dependency>
             <groupId>org.redcarp</groupId>
-            <artifactId>horizon-security-jwt</artifactId>
+            <artifactId>horizon-infrastructure</artifactId>
         </dependency>
 
     </dependencies>

@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.redcarp.horizon.infrastructure.domain.Response;
 import org.redcarp.horizon.demo.system.service.impl.SysUserSecurityManager;
-import org.redcarp.horizon.security.shared.auth.LoginUsernamePassword;
+import org.redcarp.horizon.security.jwt.auth.LoginUsernamePassword;
 import org.redcarp.horizon.demo.system.dto.ChangePasswordInput;
 import org.redcarp.horizon.demo.system.dto.LoginInput;
 import org.springframework.beans.factory.annotation.Autowired;

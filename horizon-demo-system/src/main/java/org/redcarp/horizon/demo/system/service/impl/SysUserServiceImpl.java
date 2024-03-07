@@ -10,7 +10,7 @@ import org.redcarp.horizon.demo.system.entity.SysUser;
 import org.redcarp.horizon.demo.system.mapper.SysUserMapper;
 import org.redcarp.horizon.demo.system.service.ISysUserRoleService;
 import org.redcarp.horizon.demo.system.service.ISysUserService;
-import org.redcarp.horizon.security.shared.configuration.PasswordEncoderService;
+import org.redcarp.horizon.security.jwt.config.PasswordEncoderService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
