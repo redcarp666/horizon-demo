@@ -11,50 +11,50 @@ import java.io.Serializable;
 import java.util.Date;
 
 
-@ApiModel(value = "菜单表", description = "")
+@ApiModel(value = "菜单表")
 @TableName("sys_menu")
 @Data
-public class SysMenu implements Serializable, Cloneable {
+public class SysMenu implements Serializable {
 	/**
 	 * 主键
 	 */
-	@ApiModelProperty(name = "主键", notes = "")
+	@ApiModelProperty(name = "主键")
 	@TableId
 	private String id;
 	/**
 	 * 菜单名
 	 */
-	@ApiModelProperty(name = "菜单名", notes = "")
+	@ApiModelProperty(name = "菜单名")
 	private String menuName;
 	/**
 	 * 父菜单ID
 	 */
-	@ApiModelProperty(name = "父菜单ID", notes = "")
+	@ApiModelProperty(name = "父菜单ID")
 	private String parentId;
 	/**
 	 * 排序
 	 */
-	@ApiModelProperty(name = "排序", notes = "")
+	@ApiModelProperty(name = "排序")
 	private Integer sort;
 	/**
 	 * 路由路径
 	 */
-	@ApiModelProperty(name = "路由路径", notes = "")
+	@ApiModelProperty(name = "路由路径")
 	private String path;
 	/**
 	 * 组件路径
 	 */
-	@ApiModelProperty(name = "组件路径", notes = "")
+	@ApiModelProperty(name = "组件路径")
 	private String component;
 	/**
 	 * 路由参数
 	 */
-	@ApiModelProperty(name = "路由参数", notes = "")
+	@ApiModelProperty(name = "路由参数")
 	private String query;
 	/**
 	 * 是否外链
 	 */
-	@ApiModelProperty(name = "是否外链", notes = "")
+	@ApiModelProperty(name = "是否外链")
 	private String isFrame;
 	/**
 	 * 菜单类型;菜单类型（0目录 1菜单 2按钮）
@@ -64,48 +64,48 @@ public class SysMenu implements Serializable, Cloneable {
 	/**
 	 * 状态
 	 */
-	@ApiModelProperty(name = "状态", notes = "")
+	@ApiModelProperty(name = "状态")
 	private Integer status;
 	/**
 	 * 权限标识
 	 */
-	@ApiModelProperty(name = "权限标识", notes = "")
+	@ApiModelProperty(name = "权限标识")
 	private String permission;
 	/**
 	 * 图标
 	 */
-	@ApiModelProperty(name = "图标", notes = "")
+	@ApiModelProperty(name = "图标")
 	private String icon;
 	/**
 	 * 删除
 	 */
-	@ApiModelProperty(name = "删除", notes = "")
+	@ApiModelProperty(name = "删除")
 	private Integer deleted;
 	/**
 	 * 租户号
 	 */
-	@ApiModelProperty(name = "租户号", notes = "")
+	@ApiModelProperty(name = "租户号")
 	private String tenantId;
 	/**
 	 * 创建人
 	 */
-	@ApiModelProperty(name = "创建人", notes = "")
+	@ApiModelProperty(name = "创建人")
 	private String createBy;
 	/**
 	 * 创建时间
 	 */
-	@ApiModelProperty(name = "创建时间", notes = "")
+	@ApiModelProperty(name = "创建时间")
 	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	private Date createTime;
 	/**
 	 * 更新人
 	 */
-	@ApiModelProperty(name = "更新人", notes = "")
+	@ApiModelProperty(name = "更新人")
 	private String updateBy;
 	/**
 	 * 更新时间
 	 */
-	@ApiModelProperty(name = "更新时间", notes = "")
+	@ApiModelProperty(name = "更新时间")
 	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	private Date updateTime;
 

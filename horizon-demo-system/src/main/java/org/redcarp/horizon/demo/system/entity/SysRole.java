@@ -15,65 +15,64 @@ import java.util.Date;
 /**
  * 角色表;
  *
- * @author : http://www.chiner.pro
  * @date : 2023-12-6
  */
-@ApiModel(value = "角色表", description = "")
+@ApiModel(value = "角色表")
 @TableName("sys_role")
 @Data
-public class SysRole implements Serializable, Cloneable {
+public class SysRole implements Serializable {
 	/**
 	 * 主键
 	 */
 	@TableId
-	@ApiModelProperty(name = "主键", notes = "")
+	@ApiModelProperty(name = "主键")
 	private String id;
 	/**
 	 * 角色名
 	 */
-	@ApiModelProperty(name = "角色名", notes = "")
+	@ApiModelProperty(name = "角色名")
 	private String roleName;
 	/**
 	 * 排序
 	 */
-	@ApiModelProperty(name = "排序", notes = "")
+	@ApiModelProperty(name = "排序")
 	private Integer sort;
 	/**
 	 * 状态
 	 */
-	@ApiModelProperty(name = "状态", notes = "")
+	@ApiModelProperty(name = "状态")
 	private Integer status;
 	/**
 	 * 删除
 	 */
-	@ApiModelProperty(name = "删除", notes = "")
+	@ApiModelProperty(name = "删除")
 	private Integer deleted;
 	/**
 	 * 租户号
 	 */
-	@ApiModelProperty(name = "租户号", notes = "")
+	@ApiModelProperty(name = "租户号")
 	private String tenantId;
 	/**
 	 * 创建人
 	 */
-	@ApiModelProperty(name = "创建人", notes = "")
+	@ApiModelProperty(name = "创建人")
 	private String createBy;
 	/**
 	 * 创建时间
 	 */
-	@ApiModelProperty(name = "创建时间", notes = "")
+	@ApiModelProperty(name = "创建时间")
 	@DateTimeFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
 	@JsonFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
 	private Date createTime;
 	/**
 	 * 更新人
 	 */
-	@ApiModelProperty(name = "更新人", notes = "")
+	@ApiModelProperty(name = "更新人")
 	private String updateBy;
 	/**
 	 * 更新时间
 	 */
-	@ApiModelProperty(name = "更新时间", notes = "")
+	@ApiModelProperty(name = "更新时间")
 	@DateTimeFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
 	@JsonFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
 	private Date updateTime;
