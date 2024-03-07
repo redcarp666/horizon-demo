@@ -3,7 +3,7 @@ package org.redcarp.horizon.demo.system.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.redcarp.horizon.common.base.domain.Response;
+import org.redcarp.horizon.infrastructure.domain.Response;
 import org.redcarp.horizon.demo.system.service.impl.SysUserSecurityManager;
 import org.redcarp.horizon.security.shared.auth.LoginUsernamePassword;
 import org.redcarp.horizon.demo.system.dto.ChangePasswordInput;

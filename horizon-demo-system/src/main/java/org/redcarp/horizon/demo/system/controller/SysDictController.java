@@ -2,8 +2,8 @@ package org.redcarp.horizon.demo.system.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
-import org.redcarp.horizon.common.base.domain.Request;
-import org.redcarp.horizon.common.base.domain.Response;
+import org.redcarp.horizon.infrastructure.domain.Request;
+import org.redcarp.horizon.infrastructure.domain.Response;
 import org.redcarp.horizon.demo.system.entity.SysDict;
 import org.redcarp.horizon.demo.system.entity.SysDictData;
 import org.redcarp.horizon.demo.system.service.ISysDictService;
