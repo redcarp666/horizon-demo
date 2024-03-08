@@ -3,14 +3,14 @@ package org.redcarp.horizon.demo.system.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.redcarp.horizon.infrastructure.domain.Request;
-import org.redcarp.horizon.infrastructure.domain.Response;
 import org.redcarp.horizon.demo.system.dto.GetPermissionRequest;
 import org.redcarp.horizon.demo.system.dto.PermissionMenuRequest;
 import org.redcarp.horizon.demo.system.dto.PermissionUserRequest;
 import org.redcarp.horizon.demo.system.entity.SysRole;
 import org.redcarp.horizon.demo.system.service.ISysRoleService;
 import org.redcarp.horizon.demo.system.service.ISysUserRoleService;
+import org.redcarp.horizon.infrastructure.domain.Request;
+import org.redcarp.horizon.infrastructure.domain.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,7 +40,7 @@ public class SysRoleController {
 	@PostMapping("/add")
 	public Response<String> add(@RequestBody Request<SysRole> request) {
 		SysRole sysRole = request.getData();
-		return sysRoleService.save(sysRole) == true ? Response.ok(sysRole.getId()) : Response.fail();
+		return sysRoleService.save(sysRole) ? Response.ok(sysRole.getId()) : Response.fail();
 	}
 
 	@ApiOperation("编辑")

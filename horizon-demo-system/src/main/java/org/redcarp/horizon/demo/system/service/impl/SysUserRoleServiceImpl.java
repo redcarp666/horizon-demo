@@ -4,20 +4,22 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.redcarp.horizon.core.util.AssertionUtils;
+import org.redcarp.horizon.demo.system.dto.PermissionUserRequest;
 import org.redcarp.horizon.demo.system.dto.UserRoleDto;
 import org.redcarp.horizon.demo.system.entity.SysRole;
 import org.redcarp.horizon.demo.system.entity.SysUserRole;
 import org.redcarp.horizon.demo.system.mapper.SysUserRoleMapper;
-import org.redcarp.horizon.demo.system.dto.PermissionUserRequest;
 import org.redcarp.horizon.demo.system.service.ISysRoleService;
 import org.redcarp.horizon.demo.system.service.ISysUserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUserRole> implements ISysUserRoleService {
 
 	@Autowired
