@@ -1,29 +1,20 @@
 package org.redcarp.horizon.demo.system.entity;
 
 
-import cn.hutool.core.date.DatePattern;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.io.Serializable;
-import java.util.Date;
+import lombok.EqualsAndHashCode;
+import org.redcarp.horizon.infrastructure.domain.HorizonBaseEntity;
 
 
+@EqualsAndHashCode(callSuper = true)
 @ApiModel(value = "部门表")
 @TableName("sys_dept")
 @Data
-public class SysDept implements Serializable {
-	/**
-	 * 主键
-	 */
-	@TableId
-	@ApiModelProperty(name = "主键")
-	private String id;
+public class SysDept extends HorizonBaseEntity {
+
 	/**
 	 * 上级部门
 	 */
@@ -64,31 +55,6 @@ public class SysDept implements Serializable {
 	 */
 	@ApiModelProperty(name = "租户号")
 	private String tenantId;
-	/**
-	 * 创建人
-	 */
-	@ApiModelProperty(name = "创建人")
-	private String createBy;
-	/**
-	 * 创建时间
-	 */
-	@ApiModelProperty(name = "创建时间")
-	@DateTimeFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
-	@JsonFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
-	private Date createTime;
-	/**
-	 * 更新人
-	 */
-	@ApiModelProperty(name = "更新人")
-	private String updateBy;
-	/**
-	 * 更新时间
-	 */
-	@ApiModelProperty(name = "更新时间")
-	@DateTimeFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
-	@JsonFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
-	private Date updateTime;
-
 
 
 }
