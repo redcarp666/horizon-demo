@@ -2,14 +2,14 @@ package org.redcarp.horizon.demo.system.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.redcarp.horizon.infrastructure.domain.Request;
-import org.redcarp.horizon.infrastructure.utils.PreconditionUtils;
 import org.redcarp.horizon.component.redis.RedisService;
 import org.redcarp.horizon.demo.system.dto.RegisterUserInput;
 import org.redcarp.horizon.demo.system.entity.SysUser;
 import org.redcarp.horizon.demo.system.mapper.SysUserMapper;
 import org.redcarp.horizon.demo.system.service.ISysUserRoleService;
 import org.redcarp.horizon.demo.system.service.ISysUserService;
+import org.redcarp.horizon.infrastructure.domain.Request;
+import org.redcarp.horizon.infrastructure.utils.PreconditionUtils;
 import org.redcarp.horizon.security.jwt.config.PasswordEncoderService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
