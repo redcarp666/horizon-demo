@@ -19,7 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boot.version>2.7.18</spring.boot.version>
         <horizon.version>1.1.0-SNAPSHOT</horizon.version>
-        <spring-cloud.version>2021.0.8</spring-cloud.version>
+        <spring-cloud.version>2021.0.9</spring-cloud.version>
     </properties>
 
 
