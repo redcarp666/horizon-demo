@@ -12,6 +12,11 @@
 
 
     <dependencies>
+        <!-- cloud项目-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.redcarp</groupId>
             <artifactId>horizon-infrastructure</artifactId>
