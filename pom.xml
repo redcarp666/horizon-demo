@@ -29,6 +29,31 @@
                 <artifactId>horizon-infrastructure</artifactId>
                 <version>${horizon.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-component-flyway</artifactId>
+                <version>${horizon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-component-druid</artifactId>
+                <version>${horizon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-component-xa</artifactId>
+                <version>${horizon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-component-mybatisplus</artifactId>
+                <version>${horizon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-security-jwt</artifactId>
+                <version>${horizon.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

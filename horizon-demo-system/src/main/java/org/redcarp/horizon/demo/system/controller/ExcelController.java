@@ -1,20 +1,23 @@
 package org.redcarp.horizon.demo.system.controller;
 
 import cn.hutool.core.collection.ListUtil;
+import cn.hutool.json.JSONUtil;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;
 import org.redcarp.horizon.infrastructure.utils.ResponseUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author redcarp
@@ -37,7 +40,14 @@ public class ExcelController {
 		e2.setAge(BigDecimal.valueOf(20));
 		e2.setCreateTime(new Date());
 		ResponseUtils.responseXLSXFileToDownload(response, "导出测试");
-		EasyExcel.write(response.getOutputStream(), ExcelExport.class).sheet("模板").doWrite((Collection<?>) null);
+		EasyExcel.write(response.getOutputStream(), ExcelExport.class).sheet("模板").doWrite(ListUtil.of(e1, e2));
+	}
+
+
+	@PostMapping("/upload")
+	public String easyExcelUpload(MultipartFile file) throws IOException {
+		List<ExcelExport> objects = EasyExcel.read(file.getInputStream()).sheet().doReadSync();
+		return JSONUtil.toJsonStr(objects);
 	}
 
 	@Data
