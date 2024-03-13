@@ -1,6 +1,7 @@
 package org.redcarp.horizon.demo.system.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.redcarp.horizon.component.redis.RedisService;
 import org.redcarp.horizon.demo.system.dto.RegisterUserInput;
@@ -15,8 +16,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 @Transactional
@@ -53,7 +52,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 	}
 
 	@Override
-	public List<SysUser> getList(Request<SysUser> request) {
+	public Page getList(Request<SysUser> request) {
 		return this.getBaseMapper().getList(request.getPage(), request.getData());
 	}
 

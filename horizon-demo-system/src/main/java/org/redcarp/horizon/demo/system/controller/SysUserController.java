@@ -1,21 +1,20 @@
 package org.redcarp.horizon.demo.system.controller;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.redcarp.horizon.infrastructure.domain.Request;
-import org.redcarp.horizon.infrastructure.domain.Response;
 import org.redcarp.horizon.demo.system.dto.RegisterUserInput;
 import org.redcarp.horizon.demo.system.entity.SysUser;
 import org.redcarp.horizon.demo.system.service.ISysUserService;
+import org.redcarp.horizon.infrastructure.domain.Request;
+import org.redcarp.horizon.infrastructure.domain.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 
 @Api(tags = "用户管理")
@@ -55,7 +54,7 @@ public class SysUserController {
 
 	@ApiOperation("获取列表")
 	@PostMapping("/getList")
-	public Response<List<SysUser>> getList(@RequestBody Request<SysUser> request) {
+	public Response<Page<SysUser>> getList(@RequestBody Request<SysUser> request) {
 		return Response.ok(sysUserService.getList(request));
 	}
 

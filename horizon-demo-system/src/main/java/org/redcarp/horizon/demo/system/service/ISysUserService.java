@@ -1,5 +1,6 @@
 package org.redcarp.horizon.demo.system.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.redcarp.horizon.infrastructure.domain.Request;
 import org.redcarp.horizon.demo.system.dto.RegisterUserInput;
@@ -15,6 +16,6 @@ public interface ISysUserService extends IService<SysUser> {
 
 	String register(RegisterUserInput input);
 
-	List<SysUser> getList(Request<SysUser> request);
+	Page<SysUser> getList(Request<SysUser> request);
 
 }
