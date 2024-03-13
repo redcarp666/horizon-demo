@@ -1,15 +1,15 @@
 package org.redcarp.horizon.demo.system.service.impl;
 
 
-import org.redcarp.horizon.infrastructure.utils.PreconditionUtils;
-import org.redcarp.horizon.security.jwt.AbstractSecurityManager;
-import org.redcarp.horizon.security.jwt.handler.BlacklistHandler;
-import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
-import org.redcarp.horizon.security.jwt.token.JwtTokens;
 import org.redcarp.horizon.core.util.MapUtils;
 import org.redcarp.horizon.demo.system.entity.SysUser;
 import org.redcarp.horizon.demo.system.service.ISysUserRoleService;
 import org.redcarp.horizon.demo.system.service.ISysUserService;
+import org.redcarp.horizon.infrastructure.utils.PreconditionUtils;
+import org.redcarp.horizon.security.jwt.AbstractSecurityManager;
+import org.redcarp.horizon.security.jwt.JwtTokenFactory;
+import org.redcarp.horizon.security.jwt.handler.BlacklistHandler;
+import org.redcarp.horizon.security.jwt.CurrentUserHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
@@ -33,7 +33,7 @@ public class SysUserSecurityManager extends AbstractSecurityManager {
 	@Autowired
 	ISysUserService userService;
 	@Autowired
-	JwtTokens jwtTokens;
+	JwtTokenFactory jwtTokenFactory;
 	@Autowired
 	ISysUserRoleService userRoleService;
 	@Autowired
@@ -90,7 +90,7 @@ public class SysUserSecurityManager extends AbstractSecurityManager {
 			                                    accessToken.getClaimAsStringList("roles")));
 			result.put("token", accessToken.getTokenValue());
 			result.put("tokenExpiresIn", accessToken.getExpiresAt());
-			result.put("refreshToken", jwtTokens.generateJwtRefreshToken(subject, null).getTokenValue());
+			result.put("refreshToken", jwtTokenFactory.createJwtRefreshToken(subject, null).getTokenValue());
 		}
 		return result;
 	}
@@ -98,7 +98,7 @@ public class SysUserSecurityManager extends AbstractSecurityManager {
 	private Jwt getNewJwt(SysUser sysUser) {
 		PreconditionUtils.requireNotNull(sysUser, "user.null.error");
 		List<String> roleNames = userRoleService.getRoles(sysUser.getId()).getRoleNames();
-		return jwtTokens.generateJwtToken(sysUser.getId(), claimMap -> {
+		return jwtTokenFactory.createJwtToken(sysUser.getId(), claimMap -> {
 			claimMap.put("roles", roleNames);
 			claimMap.put("name", sysUser.getUserName());
 		});

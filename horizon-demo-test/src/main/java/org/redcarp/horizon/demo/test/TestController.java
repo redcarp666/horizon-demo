@@ -1,7 +1,7 @@
 package org.redcarp.horizon.demo.test;
 
 import org.redcarp.horizon.infrastructure.domain.Response;
-import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
+import org.redcarp.horizon.security.jwt.CurrentUserHolder;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

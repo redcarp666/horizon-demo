@@ -16,7 +16,7 @@ import org.redcarp.horizon.demo.system.service.ISysMenuService;
 import org.redcarp.horizon.demo.system.service.ISysRoleMenuService;
 import org.redcarp.horizon.demo.system.service.ISysRoleService;
 import org.redcarp.horizon.demo.system.service.ISysUserRoleService;
-import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
+import org.redcarp.horizon.security.jwt.CurrentUserHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
