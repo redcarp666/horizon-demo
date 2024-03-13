@@ -64,6 +64,11 @@
                 <artifactId>horizon-security-jwt</artifactId>
                 <version>${horizon.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-api-client</artifactId>
+                <version>${horizon.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

@@ -11,6 +11,7 @@ import org.redcarp.horizon.demo.system.service.ISysUserService;
 import org.redcarp.horizon.infrastructure.domain.Request;
 import org.redcarp.horizon.infrastructure.domain.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,6 +55,7 @@ public class SysUserController {
 
 	@ApiOperation("获取列表")
 	@PostMapping("/getList")
+	@PreAuthorize("isAuthenticated()")
 	public Response<Page<SysUser>> getList(@RequestBody Request<SysUser> request) {
 		return Response.ok(sysUserService.getList(request));
 	}
