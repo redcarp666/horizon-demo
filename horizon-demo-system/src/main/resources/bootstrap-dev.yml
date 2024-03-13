@@ -16,7 +16,7 @@ spring:
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
-      # 配置Druid数据源
+    # 配置Druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       initial-size: 5

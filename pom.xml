@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>horizon-demo-system</module>
+        <module>horizon-demo-test</module>
     </modules>
 
     <properties>
