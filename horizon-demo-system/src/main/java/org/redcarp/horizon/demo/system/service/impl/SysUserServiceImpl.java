@@ -14,6 +14,7 @@ import org.redcarp.horizon.infrastructure.utils.PreconditionUtils;
 import org.redcarp.horizon.security.jwt.config.PasswordEncoderService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,12 +22,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
 
-
 	@Autowired
 	ISysUserRoleService sysUserRoleService;
 	@Autowired
 	RedisService redisService;
 
+	@Autowired
+	private ApplicationEventPublisher applicationEventPublisher;
 
 	@Override
 	public SysUser changePassword(String username, String newEncodedPassword) {
@@ -47,7 +49,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 		SysUser sysUser = new SysUser();
 		BeanUtils.copyProperties(input, sysUser);
 		sysUser.setPassword(PasswordEncoderService.getPasswordEncoder().encode(input.getPassword()));
-		save(sysUser);
+		saveOrUpdate(sysUser);
+		applicationEventPublisher.publishEvent(sysUser);
 		return sysUser.getId();
 	}
 

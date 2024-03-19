@@ -7,14 +7,17 @@ import org.redcarp.horizon.core.util.AssertionUtils;
 import org.redcarp.horizon.demo.system.dto.PermissionUserRequest;
 import org.redcarp.horizon.demo.system.dto.UserRoleDto;
 import org.redcarp.horizon.demo.system.entity.SysRole;
+import org.redcarp.horizon.demo.system.entity.SysUser;
 import org.redcarp.horizon.demo.system.entity.SysUserRole;
 import org.redcarp.horizon.demo.system.mapper.SysUserRoleMapper;
 import org.redcarp.horizon.demo.system.service.ISysRoleService;
 import org.redcarp.horizon.demo.system.service.ISysUserRoleService;
+import org.redcarp.horizon.infrastructure.domain.HorizonBaseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -54,5 +57,15 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
 					Collectors.toList()));
 		}
 		return userRoleDto;
+	}
+
+	@EventListener
+	public void addDefaultRoleWhenUserRegister(SysUser user) {
+		String roleId = "1";
+		SysRole sysRole = roleService.getOne(new LambdaQueryWrapper<SysRole>().eq(HorizonBaseEntity::getId, roleId));
+		SysUserRole sysUserRole = new SysUserRole();
+		sysUserRole.setUserId(user.getId());
+		sysUserRole.setRoleId(sysRole.getId());
+		save(sysUserRole);
 	}
 }
