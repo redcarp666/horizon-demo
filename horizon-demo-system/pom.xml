@@ -41,6 +41,10 @@
             <groupId>org.redcarp</groupId>
             <artifactId>horizon-security-jwt</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.redcarp</groupId>
+            <artifactId>horizon-component-jms</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

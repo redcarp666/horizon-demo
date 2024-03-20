@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.redcarp.horizon.component.redis.RedisService;
 import org.redcarp.horizon.demo.system.dto.RegisterUserInput;
+import org.redcarp.horizon.demo.system.dto.UserRegisterMessage;
 import org.redcarp.horizon.demo.system.entity.SysUser;
 import org.redcarp.horizon.demo.system.mapper.SysUserMapper;
 import org.redcarp.horizon.demo.system.service.ISysUserRoleService;
@@ -15,13 +16,15 @@ import org.redcarp.horizon.security.jwt.config.PasswordEncoderService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
-
+	@Autowired
+	JmsTemplate jmsTemplate;
 	@Autowired
 	ISysUserRoleService sysUserRoleService;
 	@Autowired
@@ -51,6 +54,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 		sysUser.setPassword(PasswordEncoderService.getPasswordEncoder().encode(input.getPassword()));
 		saveOrUpdate(sysUser);
 		applicationEventPublisher.publishEvent(sysUser);
+		jmsTemplate.convertAndSend("horizon-system-user-register",
+		                           new UserRegisterMessage(sysUser.getId(), sysUser.getSex()));
 		return sysUser.getId();
 	}
 

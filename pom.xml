@@ -36,6 +36,11 @@
             </dependency>
             <dependency>
                 <groupId>org.redcarp</groupId>
+                <artifactId>horizon-component-jms</artifactId>
+                <version>${horizon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
                 <artifactId>horizon-infrastructure</artifactId>
                 <version>${horizon.version}</version>
             </dependency>
