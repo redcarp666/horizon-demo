@@ -11,6 +11,7 @@
     <modules>
         <module>horizon-demo-system</module>
         <module>horizon-demo-test</module>
+        <module>horizon-demo-eureka-server</module>
     </modules>
 
     <properties>
@@ -26,6 +27,14 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- SpringBoot 依赖配置 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- SpringCloud 微服务 -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -33,6 +42,11 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-core</artifactId>
+                <version>${horizon.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.redcarp</groupId>
