@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
  */
 @Data
 public class ChangePasswordInput {
-	@NotBlank
+	@NotBlank(message = "old.pwd.not.blank")
 	private String oldPassword;
 	@NotBlank
 	private String newPassword;
