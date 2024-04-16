@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="demo">
+
+    <select id="list">
+        <where>
+            <if test="input.emOrgId != null and input.emOrgId != ''">
+                and t.em_org_id = #{input.emOrgId}
+            </if>
+            <if test="input.lineName != null and input.lineName != ''">
+                and t.line_name like concat('%',#{input.lineName},'%')
+            </if>
+            <if test="input.keyword !=null and input.keyword != ''">
+                and (t.org_name like concat('%',#{input.keyword},'%') or t.org_code like concat('%',#{input.keyword},'%') or t.responsible_unit_code like concat('%',#{input.keyword},'%'))
+            </if>
+            <if test="input.mediumTypes != null and input.mediumTypes.size() > 0">
+                and t.medium_type in
+                <foreach collection="input.mediumTypes" item="medium" open="(" separator="," close=")">
+                    #{medium}
+                </foreach>
+            </if>
+            <if test="input.beginAlarmTime != null">
+                and t.alarm_time &gt;= #{input.beginAlarmTime}
+            </if>
+            <if test="input.endAlarmTime != null">
+                and t.alarm_time &lt;= #{input.endAlarmTime}
+            </if>
+        </where>
+    </select>
+</mapper>
