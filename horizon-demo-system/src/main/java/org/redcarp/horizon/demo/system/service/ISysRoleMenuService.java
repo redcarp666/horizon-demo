@@ -6,8 +6,6 @@ import org.redcarp.horizon.demo.system.entity.SysRoleMenu;
 /**
  * ISYS 角色菜单服务
  *
- * @author yangjianfeng
- * @date 2023/12/11
  */
 public interface ISysRoleMenuService extends IService<SysRoleMenu> {
 }
