@@ -62,7 +62,7 @@ public class SysUserSecurityManager extends AbstractSecurityManager {
 	}
 
 	@Override
-	protected void passwordChangeSucceed() {
+	public void logout() {
 		blacklistHandler.addToBlacklist(CurrentUserHolder.getCurrentUserId());
 	}
 
