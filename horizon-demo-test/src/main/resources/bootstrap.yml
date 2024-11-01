@@ -8,4 +8,5 @@ spring:
     name: TEST-SERVICE
   profiles:
     active: dev   # local 本地 dev:开发环境 test：测试环境  uat:uat环境 prod:生产环境
-
+  jta:
+    log-dir: ../logs/test
