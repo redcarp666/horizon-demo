@@ -9,7 +9,7 @@ import org.redcarp.horizon.infrastructure.utils.PreconditionUtils;
 import org.redcarp.horizon.security.jwt.AbstractSecurityManager;
 import org.redcarp.horizon.security.jwt.JwtTokenFactory;
 import org.redcarp.horizon.security.jwt.handler.BlacklistHandler;
-import org.redcarp.horizon.security.jwt.CurrentUserHolder;
+import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
