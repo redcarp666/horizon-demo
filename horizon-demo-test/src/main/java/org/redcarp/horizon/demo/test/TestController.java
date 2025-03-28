@@ -1,7 +1,7 @@
 package org.redcarp.horizon.demo.test;
 
-import org.redcarp.horizon.api.client.dto.ClientRequestDto;
 import org.redcarp.horizon.api.client.UserServiceClient;
+import org.redcarp.horizon.api.client.dto.ClientRequestDto;
 import org.redcarp.horizon.infrastructure.domain.Response;
 import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
 import org.springframework.beans.factory.annotation.Autowired;
