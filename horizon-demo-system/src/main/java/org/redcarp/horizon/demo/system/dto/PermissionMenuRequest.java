@@ -9,9 +9,9 @@ import java.util.List;
 @Data
 public class PermissionMenuRequest {
 
-    @Schema(name = "角色id")
+    @Schema(description = "角色id")
     private String roleId;
-    @Schema(name = "授权菜单")
+    @Schema(description = "授权菜单")
     private List<SysMenu> permissionList;
 
 }

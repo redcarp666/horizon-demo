@@ -8,9 +8,9 @@ import java.util.List;
 @Data
 public class PermissionUserRequest {
 
-    @Schema(name = "角色id")
+    @Schema(description = "角色id")
     private String roleId;
-    @Schema(name = "用户id")
+    @Schema(description = "用户id")
     private List<String> permissionList;
 
 }

@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Data
 public class GetPermissionRequest {
-    @Schema(name = "角色id")
+    @Schema(description = "角色id")
     private String roleId;
 }
