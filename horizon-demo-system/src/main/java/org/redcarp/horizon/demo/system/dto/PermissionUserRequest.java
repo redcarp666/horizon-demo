@@ -1,6 +1,6 @@
 package org.redcarp.horizon.demo.system.dto;
 
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import java.util.List;
@@ -8,9 +8,9 @@ import java.util.List;
 @Data
 public class PermissionUserRequest {
 
-    @ApiModelProperty("角色id")
+    @Schema(name = "角色id")
     private String roleId;
-    @ApiModelProperty("用户id")
+    @Schema(name = "用户id")
     private List<String> permissionList;
 
 }

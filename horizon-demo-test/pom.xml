@@ -28,9 +28,5 @@
             <groupId>org.redcarp</groupId>
             <artifactId>horizon-security-jwt</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.redcarp</groupId>
-            <artifactId>horizon-api-client</artifactId>
-        </dependency>
     </dependencies>
 </project>

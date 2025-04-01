@@ -15,13 +15,13 @@
     </modules>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>21</java.version>
         <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
         <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.boot.version>2.7.18</spring.boot.version>
-        <horizon.version>1.1.0-SNAPSHOT</horizon.version>
-        <spring-cloud.version>2021.0.8</spring-cloud.version>
+        <spring.boot.version>3.4.4</spring.boot.version>
+        <horizon.version>2.0.0-SNAPSHOT</horizon.version>
+        <spring-cloud.version>2024.0.1</spring-cloud.version>
     </properties>
 
 
@@ -81,11 +81,6 @@
             <dependency>
                 <groupId>org.redcarp</groupId>
                 <artifactId>horizon-security-jwt</artifactId>
-                <version>${horizon.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.redcarp</groupId>
-                <artifactId>horizon-api-client</artifactId>
                 <version>${horizon.version}</version>
             </dependency>
         </dependencies>
